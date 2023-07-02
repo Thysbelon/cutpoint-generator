@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>Cutpoint Group Frequency Distribution Table Diagram Generator</title>
+<meta name=color-scheme content="dark">
+<meta name=viewport content=width=device-width,initial-scale=1.0>
+<style>
+p {max-width:40em}
+footer {position:absolute;bottom:.4em;right:.4em}
+</style>
+</head>
+<body>
+<section>
+<h1>Cutpoint Group Frequency Distribution Table Diagram Generator</h1>
+<p>Manually counting data points to create a diagram for a Statistics class assignment is monotonous and mindless work. I was able to find generators for <a href=https://goodcalculators.com/grouped-frequency-distribution-calculator/>limit group frequency distribution diagrams</a> and <a href=https://www.calculatorsoup.com/calculators/statistics/stemleaf.php>stem and leaf diagrams</a>, but I had to create my own cutpoint group frequency distribution diagram generator for continuous data A.K.A. decimal numbers. When entering data, please be consistent with your delimiters. If there is a newline for every number, that's okay; but if there's a newline for every <em>eight</em> numbers, the generator won't work.
+</section>
+<label for="data">Data:</label>
+<textarea id="data" name="data" rows=15>
+1.8
+2.0
+1.8
+2.3
+3.8
+3.4
+2.7
+1.1
+3.3
+1.2
+3.6
+1.9
+7.6
+2.0
+1.5
+2.0
+1.1
+0.7
+1.0
+1.8
+1.8
+6.7</textarea>
+<br>
+<label for="width">Class Width:</label>
+<input type="number" id="width" name="width" min="1" value=1>
+<button onclick="generateDiagram()">Go</button>
+<p id=result>
+<script src=cutpoint.js></script>
+<footer><a href=https://github.com/Thysbelon/cutpoint-generator/>GitHub repository</a>, <a href=https://lgpcappiello.github.io/teaching/stat1/notes/S2.3.pdf>data source</a>, <a href=日本語.html lang="ja">日本語</a></footer>

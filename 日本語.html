@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset=utf-8>
+<title>連続のデータの度数分布表を生成するアプリ</title>
+<meta name=color-scheme content="dark">
+<meta name=viewport content=width=device-width,initial-scale=1.0>
+<style>
+p {max-width:40em}
+footer {position:absolute;bottom:.4em;right:.4em}
+</style>
+</head>
+<body>
+<section>
+<h1>連続のデータの度数分布表を生成するアプリ</h1>
+<p>統計学の宿題にデータを手動で数えるのは退屈で上手を要しない作業だ。<a href=https://goodcalculators.com/grouped-frequency-distribution-calculator/>離散のデータの度数分布表</a>と<a href=https://www.calculatorsoup.com/calculators/statistics/stemleaf.php>幹葉表示</a>の生成するアプリを見つけられたが、僕は連続のデータ（小数）の度数分布表を生成するアプリを作らないといけなかった。データを入力すると、区切り文字が首尾一貫になっていてください。１つの番号に１つの改行があるなら、ＯＫだ。しかし、８つの番号に１つの改行があるなら、アプリが機能しません。
+</section>
+<label for="data">データ：</label>
+<textarea id="data" name="data" rows=15>
+1.8
+2.0
+1.8
+2.3
+3.8
+3.4
+2.7
+1.1
+3.3
+1.2
+3.6
+1.9
+7.6
+2.0
+1.5
+2.0
+1.1
+0.7
+1.0
+1.8
+1.8
+6.7</textarea>
+<br>
+<label for="width">階級の範囲：</label>
+<input type="number" id="width" name="width" min="1" value=1>
+<button onclick="generateDiagram()">生成する</button>
+<p id=result>
+<script src=cutpoint.js></script>
+<footer><a href=https://github.com/Thysbelon/cutpoint-generator/>GitHubのリポジトリ</a>、<a href=https://lgpcappiello.github.io/teaching/stat1/notes/S2.3.pdf>省略時のデータの元</a>、<a href=. lang="en">English</a></footer>
